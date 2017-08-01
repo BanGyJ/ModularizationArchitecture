@@ -16,7 +16,7 @@
 
 1,移除了Router的MaApplication.把功能拆除到MaApplicationLogic和PriorityLogicUtils中,减少了侵入性
 
-2,移除了MaProvider的设置.参考ARouter加入了Group,已"/main/add"来定位Action
+2,移除了MaProvider的设置.参考ARouter加入了Group,以"/{组}/{动作}"来定位Action
 
 3,尝试引入本地Maven,加快编译速度
 
