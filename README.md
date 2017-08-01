@@ -1,55 +1,34 @@
-# ModularizationArchitecture
+# ModularizationArchitecture-demo
 
-ModularizationArchitecture is a routing-based multi-process, component-based architecture on the Android platform: it communicates with different modules and processes by sharing routes without referring to other modules. It is suitable for medium-sized App architecture team collaboration, parallel development, business line decoupling, white-box testing and other scenes.
+本Demo Fork自ModularizationArchitecture
 
-## Getting Start
+原作者地址: https://github.com/SpinyTech/ModularizationArchitecture
 
-[开始使用](http://blog.spinytech.com/2017/02/01/ma_get_start_cn/)
+## 初衷
 
-[Getting Start](http://blog.spinytech.com/2017/02/03/ma_get_start_en/)
+这是第一次接触组件化模块化是接触的选择的路由.
 
-## Download
+## 修改&重构
 
-Maven:
+根据真实在项目中的使用进行了重构,与原框架差别较大
 
-```xml
-<dependency>
-  <groupId>com.spinytech.ma</groupId>
-  <artifactId>macore</artifactId>
-  <version>0.2.1</version>
-  <type>pom</type>
-</dependency>
+主要修改:
+
+1,移除了Router的MaApplication.把功能拆除到MaApplicationLogic和PriorityLogicUtils中,减少了侵入性
+
+2,移除了MaProvider的设置.参考ARouter加入了Group,已"/main/add"来定位Action
+
+3,尝试引入本地Maven,加快编译速度
+
+4,添加了全局的Gradle配置,方便多模块统一配置
+
+#TODO
+
+添加AOP编辑时注解
+
+
+
+---
 ```
-
-Gradle:
-
-```groovy
-compile 'com.spinytech.ma:macore:0.2.1'
+ 记一次Router框架初步重构
 ```
-
-## ProGuard
-
-If you are using ProGuard you might need to add the following option:
-```
--dontwarn com.spinytech.**
-```
-
-## Other
-
-[Android架构思考](http://blog.spinytech.com/2016/12/28/android_modularization/)
-
-## License
-
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-

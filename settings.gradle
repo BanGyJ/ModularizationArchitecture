@@ -1,1 +1,1 @@
-include ':macore', ':musicdemo', ':maindemo', ':picdemo', ':webdemo'
+include ':demo-router', ':demo-music', ':demo-app', ':demo-pic', ':demo-web', ':demo-api'

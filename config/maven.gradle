@@ -1,0 +1,27 @@
+/**
+ * 上传子模块的aar到maven,加快编译速度
+ * 目前为本地maven依赖
+ * */
+
+apply plugin: 'maven'
+def MAVEN_LOCAL_PATH = "file:///" + rootDir.absolutePath + "/cache-maven"  //可以替换成自建Nexus地址
+def ARTIFACT_ID = project.name
+def VERSION_NAME = android.defaultConfig.versionName  //版本
+def GROUP_ID = "com.demo"
+
+//脚本：将Lib打成aar包上传至maven私有库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: MAVEN_LOCAL_PATH) {
+                //authentication(userName: ACCOUNT, password: PASSWORD) //远程登录
+            }
+            pom.project {
+                groupId GROUP_ID
+                artifactId ARTIFACT_ID
+                version VERSION_NAME
+                packaging 'aar'
+            }
+        }
+    }
+}

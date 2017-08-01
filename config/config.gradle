@@ -1,0 +1,31 @@
+/*依赖及编辑的版本管理*/
+
+ext {
+    android = [compileSdkVersion: 25,
+               buildToolsVersion: "25.0.2",
+               minSdkVersion    : 21,
+               targetSdkVersion : 25,
+               versionCode      : 15,
+               versionName      : "1.0.5",
+               support          : "25.1.1",
+
+    ]
+
+
+    dependencies = ["support-v7"      : "com.android.support:appcompat-v7:$ext.android.support",
+                    "design"          : "com.android.support:design:$ext.android.support",
+                    "percent"         : "com.android.support:percent:$ext.android.support",
+                    "arouter-compiler": 'com.alibaba:arouter-compiler:1.0.1',
+                    "support-v4"      : "com.android.support:support-v4:$ext.android.support",
+                    "recyclerview"    : "com.android.support:recyclerview-v7:$ext.android.support",
+                    "butterknife"     : "com.jakewharton:butterknife:8.5.1",
+                    "butterknife_atp" : 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    ]
+
+    /* javaCompileOptions {
+         annotationProcessorOptions {
+             arguments = [moduleName: project.getName()]
+         }
+     }*/
+}
